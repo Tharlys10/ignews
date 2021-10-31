@@ -30,17 +30,17 @@
         margin-left: 2rem;
       }
 
-      &:hover { 
-        color: var(--white); 
+      &:hover {
+        color: var(--white);
       }
 
-      &.active { 
-        color: var(--white); 
+      &.active {
+        color: var(--white);
         font-weight: bold;
       }
 
       &.active::after {
-        content: '';
+        content: "";
         height: 3px;
         border-radius: 3px 3px 0 0;
         width: 100%;
