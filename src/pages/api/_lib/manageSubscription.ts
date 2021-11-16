@@ -17,7 +17,7 @@ export async function saveSubscription(subscription_id: string, customer_id: str
     )
   );
 
-  // Buscar dados da subscription
+  // Buscar dados da subscription no stripe
   const subscription = await stripe.subscriptions.retrieve(subscription_id);
 
   const subscription_data = {
@@ -27,7 +27,7 @@ export async function saveSubscription(subscription_id: string, customer_id: str
     price_id: subscription.items.data[0].price.id,
   }
 
-  // Salvar/Update os dados da subscription no Fauna;
+  // Save/Update os dados da subscription no Fauna;
   if (create_action) {
     await fauna.query(
       q.Create(
